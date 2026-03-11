@@ -806,7 +806,7 @@ export const mockData = {
       ]
     }
   ],
-  "title": "刘西贵的个人导航",
+  "title": "猫猫导航",
   "backgroundUrl": "https://photos.264215.xyz/file/1773209400191_IMG_9678.JPG",
-  "_fileSha": "0b61632998d6def23e6b836c2baaa9c238cf1b2b"
+  "_fileSha": "c73552596e65af22cbd84ddabd018c7ae91321d5"
 }
