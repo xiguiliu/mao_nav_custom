@@ -36,7 +36,7 @@
   </div>
 
   <!-- 正常导航界面 -->
-  <div v-else class="nav-home">
+  <div v-else class="nav-home" :class="{ 'has-background': backgroundUrl }" :style="backgroundStyle">
     <!-- 左侧边栏 -->
     <aside class="sidebar">
       <!-- Logo区域 -->
@@ -251,7 +251,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useNavigation } from '@/apis/useNavigation.js'
 import { useThemeStore } from '@/stores/counter.js'
 // 导入搜索引擎logo图片
@@ -284,7 +284,20 @@ const getCategoryIconSVG = (category) => {
 }
 
 // 使用导航API
-const { categories, title, defaultSearchEngine, loading, error, fetchCategories } = useNavigation()
+const { categories, title, defaultSearchEngine, backgroundUrl, loading, error, fetchCategories } = useNavigation()
+
+// 计算背景图样式
+const backgroundStyle = computed(() => {
+  if (backgroundUrl.value) {
+    return {
+      backgroundImage: `url(${backgroundUrl.value})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }
+  }
+  return {}
+})
 
 // 使用主题store
 const themeStore = useThemeStore()
@@ -616,6 +629,11 @@ onUnmounted(() => {
     radial-gradient(circle at 88% 8%, rgba(var(--brand-accent-soft-rgb), 0.12), transparent 40%),
     var(--color-background);
   position: relative;
+}
+
+/* 有自定义背景图时的样式 */
+.nav-home.has-background {
+  background-color: var(--color-background);
 }
 
 .nav-home::before {
@@ -1571,6 +1589,10 @@ onUnmounted(() => {
     radial-gradient(circle at 15% 18%, rgba(var(--brand-accent-rgb), 0.18), transparent 45%),
     radial-gradient(circle at 85% 12%, rgba(var(--brand-accent-soft-rgb), 0.18), transparent 40%),
     var(--color-background);
+}
+
+.dark .nav-home.has-background {
+  background-color: var(--color-background);
 }
 
 .dark .nav-home::before {
