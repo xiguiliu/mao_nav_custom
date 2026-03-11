@@ -130,6 +130,78 @@
           </div>
           <p class="setting-description">仅支持PNG格式，建议尺寸: 128x128px</p>
         </div>
+
+        <!-- 背景图设置 -->
+        <div class="setting-group">
+          <label>导航背景图:</label>
+
+          <!-- 背景图URL设置 -->
+          <div class="background-url-group">
+            <label class="sub-label">方式一：使用图片URL</label>
+            <div class="title-input-group">
+              <input
+                v-model="backgroundUrl"
+                type="text"
+                placeholder="请输入背景图URL（例如：https://example.com/image.jpg）"
+                class="title-input"
+              >
+              <button
+                @click="saveBackgroundUrlToGitHub"
+                :disabled="backgroundUrlSaving || !backgroundUrl.trim()"
+                class="save-title-btn"
+              >
+                {{ backgroundUrlSaving ? '保存中...' : '💾 保存URL' }}
+              </button>
+            </div>
+            <p class="setting-description">当前背景URL: {{ currentBackgroundUrl || '未设置' }}</p>
+          </div>
+
+          <!-- 背景图上传 -->
+          <div class="background-upload-group">
+            <label class="sub-label">方式二：上传背景图文件</label>
+            <div class="logo-upload-area">
+              <div class="background-preview">
+                <img
+                  v-if="backgroundPreview"
+                  :src="backgroundPreview"
+                  alt="背景图预览"
+                  class="background-preview-img"
+                >
+                <img
+                  v-else-if="currentBackground"
+                  :src="currentBackground"
+                  alt="当前背景图"
+                  class="background-preview-img"
+                >
+                <div v-else class="logo-placeholder">
+                  <span>🌄</span>
+                  <p>暂无背景图</p>
+                </div>
+              </div>
+              <div class="logo-upload-controls">
+                <input
+                  ref="backgroundFileInput"
+                  type="file"
+                  accept="image/jpeg,image/jpg,image/png"
+                  @change="handleBackgroundSelect"
+                  style="display: none"
+                >
+                <button @click="selectBackground" class="select-logo-btn">
+                  📁 选择图片文件
+                </button>
+                <button
+                  @click="saveBackgroundToGitHub"
+                  :disabled="backgroundSaving || !selectedBackgroundFile"
+                  class="save-logo-btn"
+                  v-if="selectedBackgroundFile"
+                >
+                  {{ backgroundSaving ? '上传中...' : '🚀 上传背景图' }}
+                </button>
+              </div>
+            </div>
+            <p class="setting-description">支持JPG/PNG格式，建议尺寸: 1920x1080px，文件大小不超过5MB</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -328,6 +400,18 @@ const logoPreview = ref('')
 const currentLogo = ref('/logo.png')
 const logoSaving = ref(false)
 
+// 背景图设置
+const backgroundFileInput = ref(null)
+const selectedBackgroundFile = ref(null)
+const backgroundPreview = ref('')
+const currentBackground = ref('')
+const backgroundSaving = ref(false)
+
+// 背景图URL设置
+const backgroundUrl = ref('')
+const currentBackgroundUrl = ref('')
+const backgroundUrlSaving = ref(false)
+
 // 自定义弹框状态
 const dialogVisible = ref(false)
 const dialogType = ref('success')
@@ -394,12 +478,18 @@ const loadWebsiteSettings = async () => {
     // 加载搜索引擎设置
     currentSearchEngine.value = data.search || 'bing'
     searchEngine.value = currentSearchEngine.value
+
+    // 加载背景图URL设置
+    currentBackgroundUrl.value = data.backgroundUrl || ''
+    backgroundUrl.value = currentBackgroundUrl.value
   } catch (error) {
     console.error('加载网站设置失败:', error)
     currentTitle.value = '猫猫导航'
     websiteTitle.value = '猫猫导航'
     currentSearchEngine.value = 'bing'
     searchEngine.value = 'bing'
+    currentBackgroundUrl.value = ''
+    backgroundUrl.value = ''
   }
 }
 
@@ -484,6 +574,66 @@ const saveSearchEngineToGitHub = async () => {
     )
   } finally {
     searchEngineSaving.value = false
+  }
+}
+
+// 保存背景图URL到GitHub
+const saveBackgroundUrlToGitHub = async () => {
+  if (!backgroundUrl.value.trim()) {
+    showDialog(
+      'error',
+      '❌ 输入错误',
+      '请输入背景图URL',
+      []
+    )
+    return
+  }
+
+  // 验证URL格式
+  try {
+    new URL(backgroundUrl.value.trim())
+  } catch (e) {
+    showDialog(
+      'error',
+      '❌ URL格式错误',
+      '请输入有效的URL地址',
+      ['• 示例: https://example.com/image.jpg']
+    )
+    return
+  }
+
+  backgroundUrlSaving.value = true
+  try {
+    // 加载当前数据
+    const data = await loadCategoriesFromGitHub()
+
+    // 更新背景图URL
+    data.backgroundUrl = backgroundUrl.value.trim()
+
+    // 保存到GitHub
+    await saveCategoriesToGitHub(data)
+
+    currentBackgroundUrl.value = backgroundUrl.value.trim()
+    showDialog(
+      'success',
+      '🎉 背景图URL保存成功',
+      '您的背景图URL已成功保存到GitHub仓库！',
+      [
+        '• 更改将在 2-3 分钟内自动部署到线上',
+        '• 部署完成后，刷新页面即可看到新背景图',
+        '• 如有问题，请检查Vercel或CFpage是否触发自动部署'
+      ]
+    )
+  } catch (error) {
+    console.error('保存背景图URL失败:', error)
+    showDialog(
+      'error',
+      '❌ 保存失败',
+      '背景图URL保存过程中发生错误，请重试',
+      [`• 错误详情: ${error.message}`]
+    )
+  } finally {
+    backgroundUrlSaving.value = false
   }
 }
 
@@ -580,6 +730,106 @@ const saveLogoToGitHub = async () => {
     )
   } finally {
     logoSaving.value = false
+  }
+}
+
+// 选择背景图文件
+const selectBackground = () => {
+  backgroundFileInput.value?.click()
+}
+
+// 处理背景图文件选择
+const handleBackgroundSelect = (event) => {
+  const file = event.target.files[0]
+  if (!file) return
+
+  // 验证文件类型
+  if (!['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)) {
+    showDialog(
+      'error',
+      '❌ 文件格式错误',
+      '请选择JPG或PNG格式的图片文件',
+      []
+    )
+    return
+  }
+
+  // 验证文件大小 (限制为5MB)
+  if (file.size > 5 * 1024 * 1024) {
+    showDialog(
+      'error',
+      '❌ 文件过大',
+      '图片文件大小不能超过5MB',
+      [`• 当前文件大小: ${(file.size / 1024 / 1024).toFixed(2)}MB`]
+    )
+    return
+  }
+
+  selectedBackgroundFile.value = file
+
+  // 创建预览
+  const reader = new FileReader()
+  reader.onload = (e) => {
+    backgroundPreview.value = e.target.result
+  }
+  reader.readAsDataURL(file)
+}
+
+// 保存背景图到GitHub
+const saveBackgroundToGitHub = async () => {
+  if (!selectedBackgroundFile.value) {
+    showDialog(
+      'error',
+      '❌ 未选择文件',
+      '请先选择背景图文件',
+      []
+    )
+    return
+  }
+
+  backgroundSaving.value = true
+  try {
+    // 读取文件为ArrayBuffer
+    const arrayBuffer = await selectedBackgroundFile.value.arrayBuffer()
+
+    // 确定文件扩展名
+    const fileExtension = selectedBackgroundFile.value.type === 'image/png' ? 'png' : 'jpg'
+
+    // 上传到GitHub
+    const githubPath = `public/background.${fileExtension}`
+    const message = `chore: 更新导航背景图 - ${new Date().toLocaleString('zh-CN')}`
+
+    await uploadBinaryFile(githubPath, arrayBuffer, message)
+
+    // 更新当前背景图显示
+    currentBackground.value = backgroundPreview.value
+
+    // 清理选择的文件
+    selectedBackgroundFile.value = null
+    backgroundPreview.value = ''
+    backgroundFileInput.value.value = ''
+
+    showDialog(
+      'success',
+      '🎉 背景图上传成功',
+      '您的导航背景图已成功保存到GitHub仓库！',
+      [
+        '• 更改将在 2-3 分钟内自动部署到线上',
+        '• 部署完成后，刷新页面即可看到新背景图',
+        '• 如有问题，请检查Vercel或CFpage是否触发自动部署',
+        `• 背景图文件名: background.${fileExtension}`
+      ]
+    )
+  } catch (error) {
+    console.error('上传背景图失败:', error)
+    showDialog(
+      'error',
+      '❌ 上传失败',
+      '背景图上传过程中发生错误，请重试',
+      [`• 错误详情: ${error.message}`]
+    )
+  } finally {
+    backgroundSaving.value = false
   }
 }
 
@@ -1068,6 +1318,43 @@ onMounted(() => {
 .save-logo-btn:disabled {
   background: #bdc3c7;
   cursor: not-allowed;
+}
+
+/* 背景图设置样式 */
+.background-url-group {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.background-upload-group {
+  margin-top: 20px;
+}
+
+.sub-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.background-preview {
+  width: 400px;
+  height: 225px;
+  border: 2px dashed #e9ecef;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  overflow: hidden;
+}
+
+.background-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* 响应式设计 */

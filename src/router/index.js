@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import NavHomeView from '../views/NavHomeView.vue'
+import MinimalNavView from '../views/MinimalNavView.vue'
+import SimpleNavView from '../views/SimpleNavView.vue'
 import TestView from '../views/TestView.vue'
 
 const router = createRouter({
@@ -8,7 +10,26 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      component: SimpleNavView,
+      meta: {
+        title: 'Naine导航'
+      }
+    },
+    {
+      path: '/nav',
+      name: 'nav',
       component: NavHomeView,
+      meta: {
+        title: '经典导航 - 猫猫导航'
+      }
+    },
+    {
+      path: '/minimal',
+      name: 'minimal',
+      component: MinimalNavView,
+      meta: {
+        title: '极简导航 - 猫猫导航'
+      }
     },
     {
       path: '/admin',
