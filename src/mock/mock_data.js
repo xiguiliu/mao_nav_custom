@@ -806,5 +806,6 @@ export const mockData = {
       ]
     }
   ],
-  "title": "Naine"
+  "title": "Naine",
+  "backgroundUrl": "https://photos.264215.xyz/file/1773209400191_IMG_9678.JPG"
 }

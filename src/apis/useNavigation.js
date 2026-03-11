@@ -5,6 +5,7 @@ export function useNavigation() {
   const categories = ref([])
   const title = ref('')
   const defaultSearchEngine = ref('bing')
+  const backgroundUrl = ref('')
   const loading = ref(false)
   const error = ref(null)
 
@@ -30,6 +31,11 @@ export function useNavigation() {
         defaultSearchEngine.value = 'bing'
       }
 
+      // 设置背景图URL
+      if (mockData.backgroundUrl) {
+        backgroundUrl.value = mockData.backgroundUrl
+      }
+
       // 动态设置页面标题
       document.title = title.value
 
@@ -49,6 +55,11 @@ export function useNavigation() {
         defaultSearchEngine.value = 'bing'
       }
 
+      // 设置背景图URL
+      if (mockData.backgroundUrl) {
+        backgroundUrl.value = mockData.backgroundUrl
+      }
+
       document.title = title.value
     } finally {
       loading.value = false
@@ -59,6 +70,7 @@ export function useNavigation() {
     categories,
     title,
     defaultSearchEngine,
+    backgroundUrl,
     loading,
     error,
     fetchCategories

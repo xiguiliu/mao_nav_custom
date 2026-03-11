@@ -147,10 +147,7 @@ import baiduLogo from '@/assets/baidu.png'
 import bingLogo from '@/assets/bing.png'
 
 // 使用导航API
-const { categories, title, defaultSearchEngine, loading, error, fetchCategories } = useNavigation()
-
-// 背景图URL（从GitHub数据中获取）
-const backgroundUrlFromData = ref('')
+const { categories, title, defaultSearchEngine, backgroundUrl, loading, error, fetchCategories } = useNavigation()
 
 // 使用主题store
 const themeStore = useThemeStore()
@@ -242,8 +239,8 @@ const backgroundImage = ref('https://images.unsplash.com/photo-1506905925346-21b
 // 检查是否有自定义背景图
 const checkCustomBackground = async () => {
   // 优先级1: 如果设置了backgroundUrl，使用它
-  if (backgroundUrlFromData.value) {
-    backgroundImage.value = backgroundUrlFromData.value
+  if (backgroundUrl.value) {
+    backgroundImage.value = backgroundUrl.value
     return
   }
 
@@ -303,18 +300,6 @@ const scrollToCategory = (categoryId) => {
 onMounted(async () => {
   // 加载数据
   await fetchCategories()
-
-  // 从加载的数据中获取背景图URL
-  try {
-    const response = await fetch('/mock_data.js')
-    const text = await response.text()
-    const match = text.match(/backgroundUrl:\s*['"]([^'"]+)['"]/)
-    if (match && match[1]) {
-      backgroundUrlFromData.value = match[1]
-    }
-  } catch (e) {
-    console.log('无法加载背景图URL配置')
-  }
 
   // 检查自定义背景图
   await checkCustomBackground()
