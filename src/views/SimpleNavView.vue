@@ -31,7 +31,7 @@
     <!-- 侧边栏菜单 -->
     <aside :class="['sidebar-menu', { show: showSidebar }]" @mouseleave="showSidebar = false">
       <div class="sidebar-header">
-        <h3>分类导航</h3>
+        <h3>Naine导航</h3>
       </div>
       <nav class="sidebar-nav">
         <a
@@ -41,7 +41,8 @@
           class="sidebar-item"
           @click="scrollToCategory(category.id)"
         >
-          {{ category.name }}
+          <span class="sidebar-icon">{{ category.icon }}</span>
+          <span>{{ category.name }}</span>
         </a>
       </nav>
     </aside>
@@ -64,9 +65,36 @@
     <div class="container">
       <!-- 顶部标题和搜索 -->
       <header class="header-section">
-        <h1 class="main-title">{{ title || 'Naine导航' }}</h1>
-        <p class="sub-title">{{ currentQuote }}</p>
-        <p class="datetime-display">{{ currentDateTime }}</p>
+        <!-- 时间日期卡片 -->
+        <div class="datetime-card">
+          <div class="flip-clock">
+            <div class="flip-unit">
+              <div class="flip-card" :class="{ flip: flipHourTens }">{{ hourTens }}</div>
+            </div>
+            <div class="flip-unit">
+              <div class="flip-card" :class="{ flip: flipHourOnes }">{{ hourOnes }}</div>
+            </div>
+            <div class="flip-separator">:</div>
+            <div class="flip-unit">
+              <div class="flip-card" :class="{ flip: flipMinuteTens }">{{ minuteTens }}</div>
+            </div>
+            <div class="flip-unit">
+              <div class="flip-card" :class="{ flip: flipMinuteOnes }">{{ minuteOnes }}</div>
+            </div>
+            <div class="flip-separator">:</div>
+            <div class="flip-unit">
+              <div class="flip-card" :class="{ flip: flipSecondTens }">{{ secondTens }}</div>
+            </div>
+            <div class="flip-unit">
+              <div class="flip-card" :class="{ flip: flipSecondOnes }">{{ secondOnes }}</div>
+            </div>
+          </div>
+          <div class="date-display">{{ currentDate }}</div>
+          <div class="title-row">
+            <h1 class="main-title">{{ title || 'Naine' }}</h1>
+            <p class="sub-title">{{ currentQuote }}</p>
+          </div>
+        </div>
 
         <!-- 搜索引擎选择 -->
         <div class="search-engines">
@@ -230,7 +258,30 @@ const quotes = [
 const currentQuote = ref('')
 
 // 当前日期时间
-const currentDateTime = ref('')
+const currentDate = ref('')
+const hourTens = ref('0')
+const hourOnes = ref('0')
+const minuteTens = ref('0')
+const minuteOnes = ref('0')
+const secondTens = ref('0')
+const secondOnes = ref('0')
+
+// 前一个值（用于翻页动画）
+const prevHourTens = ref('0')
+const prevHourOnes = ref('0')
+const prevMinuteTens = ref('0')
+const prevMinuteOnes = ref('0')
+const prevSecondTens = ref('0')
+const prevSecondOnes = ref('0')
+
+// 翻页动画状态
+const flipHourTens = ref(false)
+const flipHourOnes = ref(false)
+const flipMinuteTens = ref(false)
+const flipMinuteOnes = ref(false)
+const flipSecondTens = ref(false)
+const flipSecondOnes = ref(false)
+
 let dateTimeTimer = null
 
 // 背景图
@@ -279,7 +330,47 @@ const updateDateTime = () => {
   const weekDays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
   const weekDay = weekDays[now.getDay()]
 
-  currentDateTime.value = `${year}年${month}月${day}日 ${weekDay} ${hours}:${minutes}:${seconds}`
+  // 检查并触发翻页动画
+  if (hours[0] !== hourTens.value) {
+    prevHourTens.value = hourTens.value
+    flipHourTens.value = true
+    setTimeout(() => { flipHourTens.value = false }, 600)
+  }
+  if (hours[1] !== hourOnes.value) {
+    prevHourOnes.value = hourOnes.value
+    flipHourOnes.value = true
+    setTimeout(() => { flipHourOnes.value = false }, 600)
+  }
+  if (minutes[0] !== minuteTens.value) {
+    prevMinuteTens.value = minuteTens.value
+    flipMinuteTens.value = true
+    setTimeout(() => { flipMinuteTens.value = false }, 600)
+  }
+  if (minutes[1] !== minuteOnes.value) {
+    prevMinuteOnes.value = minuteOnes.value
+    flipMinuteOnes.value = true
+    setTimeout(() => { flipMinuteOnes.value = false }, 600)
+  }
+  if (seconds[0] !== secondTens.value) {
+    prevSecondTens.value = secondTens.value
+    flipSecondTens.value = true
+    setTimeout(() => { flipSecondTens.value = false }, 600)
+  }
+  if (seconds[1] !== secondOnes.value) {
+    prevSecondOnes.value = secondOnes.value
+    flipSecondOnes.value = true
+    setTimeout(() => { flipSecondOnes.value = false }, 600)
+  }
+
+  // 更新当前值
+  hourTens.value = hours[0]
+  hourOnes.value = hours[1]
+  minuteTens.value = minutes[0]
+  minuteOnes.value = minutes[1]
+  secondTens.value = seconds[0]
+  secondOnes.value = seconds[1]
+
+  currentDate.value = `${year}年${month}月${day}日 ${weekDay}`
 }
 
 // 随机选择一句励志语
@@ -360,11 +451,11 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .dark .banner-video::after {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* 右侧触发区域 */
@@ -420,7 +511,7 @@ onUnmounted(() => {
   top: 0;
   width: 280px;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -434,14 +525,15 @@ onUnmounted(() => {
 
 .sidebar-header {
   padding: 30px 20px 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .sidebar-header h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: #fff;
   margin: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-nav {
@@ -449,19 +541,27 @@ onUnmounted(() => {
 }
 
 .sidebar-item {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 12px 20px;
-  color: #333;
+  color: #fff;
   text-decoration: none;
   font-size: 15px;
   transition: all 0.3s;
   border-left: 3px solid transparent;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-item:hover {
-  background: rgba(102, 126, 234, 0.1);
-  border-left-color: #667eea;
-  color: #667eea;
+  background: rgba(255, 255, 255, 0.2);
+  border-left-color: #fff;
+  color: #fff;
+}
+
+.sidebar-icon {
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
 /* 容器 */
@@ -482,7 +582,7 @@ onUnmounted(() => {
   font-weight: 700;
   color: #fff;
   text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   letter-spacing: 2px;
 }
 
@@ -491,17 +591,124 @@ onUnmounted(() => {
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
   font-weight: 400;
-  margin: 0 0 12px 0;
+  margin: 0 0 30px 0;
 }
 
-.datetime-display {
-  font-size: 18px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.98);
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-  margin-bottom: 35px;
-  letter-spacing: 2px;
+.datetime-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 40px;
+  margin-bottom: 15px;
+}
+
+/* 翻页时钟 */
+.flip-clock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flip-unit {
+  position: relative;
+  width: 60px;
+  height: 80px;
+}
+
+.flip-separator {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  margin: 0 4px;
+  line-height: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
   font-family: 'Courier New', monospace;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.1s ease;
+}
+
+.flip-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.flip-card.flip {
+  animation: flipAnimation 0.6s ease-in-out;
+}
+
+@keyframes flipAnimation {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.8);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.date-display {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.datetime-card .main-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.title-separator {
+  font-size: 24px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.datetime-card .sub-title {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+  margin: 0;
 }
 
 /* 搜索引擎选择 */
@@ -842,8 +1049,30 @@ onUnmounted(() => {
     font-size: 14px;
   }
 
-  .datetime-display {
-    font-size: 14px;
+  .datetime-card {
+    padding: 20px 25px;
+    margin-bottom: 25px;
+  }
+
+  .flip-unit {
+    width: 40px;
+    height: 60px;
+  }
+
+  .flip-separator {
+    font-size: 36px;
+    margin: 0 2px;
+  }
+
+  .flip-card-top,
+  .flip-card-bottom,
+  .flip-card-back,
+  .flip-card-back-bottom {
+    font-size: 32px;
+  }
+
+  .date-display {
+    font-size: 13px;
   }
 
   .search-engines {
