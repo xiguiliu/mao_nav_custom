@@ -807,6 +807,6 @@ export const mockData = {
     }
   ],
   "title": "Naine",
-  "_fileSha": "50c8e8c182c9c79ac0a84e9f72e764a142904847",
-  "backgroundUrl": ""
+  "_fileSha": "62b1905c0ae2414604badb1e80170c3247c4261d",
+  "backgroundUrl": "https://photos.264215.xyz/file/1773209400191_IMG_9678.JPG"
 }
