@@ -807,7 +807,7 @@ export const mockData = {
     }
   ],
   "title": "猫猫导航",
-  "backgroundUrl": "https://photos.264215.xyz/file/1773209400191_IMG_9678.JPG",
-  "_fileSha": "d9d574ccfba36cd5451824382952ca06f1ca38d6",
+  "backgroundUrl": "https://haowallpaper.com/link/common/file/previewFileImg/18313675327917440",
+  "_fileSha": "511e65cbf4b4edf872956e6da116419bbcdab4c4",
   "search": "baidu"
 }
