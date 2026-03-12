@@ -83,7 +83,7 @@ export const mockData = {
           "url": "http://iot.tastek.cn/#/",
           "description": "",
           "icon": "http://47.104.226.190:18083/static/emq.ico"
-        },
+        }
       ]
     },
     {
@@ -162,7 +162,6 @@ export const mockData = {
           "description": "",
           "icon": "https://www.kancloud.cn/asset/app/images/logo.png"
         },
-
         {
           "id": "site-1755077605625",
           "name": "微信小程序",
@@ -176,7 +175,7 @@ export const mockData = {
           "url": "https://markdown.com.cn/",
           "description": "",
           "icon": "https://markdown.com.cn/hero.png"
-        },
+        }
       ]
     },
     {
@@ -291,13 +290,14 @@ export const mockData = {
           "url": "https://www.jetbrains.com/idea/",
           "description": "专业前端IDE",
           "icon": "/sitelogo/www.jetbrains.com.ico"
-        }, {
+        },
+        {
           "id": "ckey",
           "name": "jetbrains激活工具",
           "url": "https://ckey.run/",
           "description": "IDEA激活工具",
           "icon": "/sitelogo/www.jetbrains.com.ico"
-        },
+        }
       ]
     },
     {
@@ -361,7 +361,7 @@ export const mockData = {
           "url": "http://www.ickezhan.com/bbs/",
           "description": "",
           "icon": "http://www.ickezhan.com/img/logo.png"
-        },
+        }
       ]
     },
     {
@@ -414,10 +414,10 @@ export const mockData = {
         },
         {
           "id": "site-1755074690874",
-          "name": "ATK鼠标驱动",
-          "url": "https://hub.atk.pro",
+          "name": "迈从键盘驱动",
+          "url": "https://www.mchose.com.cn/#/connectDevice",
           "description": "",
-          "icon": "https://cdn.atk.pro/hub-v3/production/3.1.11/icons/icon.ico"
+          "icon": "https://www.mchose.com.cn/mchose.ico"
         },
         {
           "id": "site-1755074690874",
@@ -531,7 +531,7 @@ export const mockData = {
           "url": "https://web2.52pokemon.cc/plan",
           "description": "",
           "icon": "https://img1.baidu.com/it/u=1714259134,1057431677&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"
-        },
+        }
       ]
     },
     {
@@ -557,6 +557,5 @@ export const mockData = {
       ]
     }
   ],
-  "title": "迷妹导航",
-  "backgroundUrl": "https://photos.264215.xyz/file/1773209400191_IMG_9678.JPG",
+  "title": "迷妹导航"
 }
