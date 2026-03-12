@@ -422,7 +422,7 @@ export const mockData = {
         {
           "id": "site-1755074690874",
           "name": "迈从键盘驱动",
-          "url": "hhttps://www.mchose.com.cn/#/connectDevice",
+          "url": "https://www.mchose.com.cn/#/connectDevice",
           "description": "",
           "icon": "https://www.mchose.com.cn/mchose.ico"
         },
