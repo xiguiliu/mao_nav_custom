@@ -31,7 +31,7 @@
     <!-- 侧边栏菜单 -->
     <aside :class="['sidebar-menu', { show: showSidebar }]" @mouseleave="showSidebar = false">
       <div class="sidebar-header">
-        <h3>Naine导航</h3>
+        <h3>迷妹导航</h3>
       </div>
       <nav class="sidebar-nav">
         <a
@@ -91,7 +91,7 @@
           </div>
           <div class="date-display">{{ currentDate }}</div>
           <div class="title-row">
-            <h1 class="main-title">{{ title || 'Naine' }}</h1>
+            <h1 class="main-title">{{ title || '迷妹导航' }}</h1>
             <p class="sub-title">{{ currentQuote }}</p>
           </div>
         </div>
@@ -160,7 +160,7 @@
 
       <!-- 底部 -->
       <footer class="footer">
-        <p>© 2026 Naine导航 平凡却不平庸</p>
+        <p>© 2026 迷妹导航 平凡却不平庸</p>
       </footer>
     </div>
   </div>
