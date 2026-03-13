@@ -82,14 +82,14 @@ export const mockData = {
           "name": "塔石物联网",
           "url": "http://iot.tastek.cn/#/",
           "description": "",
-          "icon": "http://iot.tastek.cn/qweqn.ico"
+          "icon": "https://www.google.com/s2/favicons?domain=iot.tastek.cn&sz=128"
         },
         {
           "id": "exqx",
           "name": "EMQX Dashboard",
-          "url": "http://iot.tastek.cn/#/",
+          "url": "http://47.104.226.190:18083",
           "description": "",
-          "icon": "http://47.104.226.190:18083/static/emq.ico"
+          "icon": "https://www.emqx.com/favicon/favicon.ico"
         }
       ]
     },
