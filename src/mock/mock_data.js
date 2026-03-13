@@ -82,14 +82,14 @@ export const mockData = {
           "name": "塔石物联网",
           "url": "http://iot.tastek.cn/#/",
           "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=iot.tastek.cn&sz=128"
+          "icon": "http://iot.tastek.cn/qweqn.ico"
         },
         {
           "id": "exqx",
           "name": "EMQX Dashboard",
-          "url": "http://47.104.226.190:18083",
+          "url": "http://iot.tastek.cn/#/",
           "description": "",
-          "icon": "https://www.emqx.com/favicon/favicon.ico"
+          "icon": "http://47.104.226.190:18083/static/emq.ico"
         }
       ]
     },
@@ -367,7 +367,7 @@ export const mockData = {
           "name": "IC客栈",
           "url": "http://www.ickezhan.com/bbs/",
           "description": "",
-          "icon": "http://www.ickezhan.com/img/logo.png"
+          "icon": "https://www.google.com/s2/favicons?domain=www.ickezhan.com&sz=128"
         }
       ]
     },
