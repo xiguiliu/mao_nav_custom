@@ -14,6 +14,13 @@ export const mockData = {
           "icon": "/sitelogo/linux.do.ico"
         },
         {
+          "id": "site-1755078522704",
+          "name": "抖音",
+          "url": "https://www.douyin.com/",
+          "description": "",
+          "icon": "https://img0.baidu.com/it/u=360921970,1201638078&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500"
+        },
+        {
           "id": "site-1755074953116",
           "name": "宝可梦",
           "url": "https://web2.52pokemon.cc/plan",
