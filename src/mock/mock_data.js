@@ -87,9 +87,9 @@ export const mockData = {
         {
           "id": "exqx",
           "name": "EMQX Dashboard",
-          "url": "http://iot.tastek.cn/#/",
+          "url": "http://47.104.226.190:18083",
           "description": "",
-          "icon": "http://47.104.226.190:18083/static/emq.ico"
+          "icon": "https://api.faviconkit.com/47.104.226.190:18083/64"
         }
       ]
     },
