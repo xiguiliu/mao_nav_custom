@@ -89,7 +89,7 @@ export const mockData = {
           "name": "EMQX Dashboard",
           "url": "http://47.104.226.190:18083",
           "description": "",
-          "icon": "https://api.faviconkit.com/47.104.226.190:18083/64"
+          "icon": "https://www.emqx.com/favicon/favicon.ico"
         }
       ]
     },
