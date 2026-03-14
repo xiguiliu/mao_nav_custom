@@ -579,7 +579,7 @@ export const mockData = {
         {
           "id": "hj001",
           "name": "HJ",
-          "url": "",
+          "url": "https://qeokqey.com/",
           "description": "https://apply.dsonvwh.cc/",
           "icon": "https://apply.dsonvwh.cc/favicon.ico"
         },
