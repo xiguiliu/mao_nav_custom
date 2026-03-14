@@ -420,20 +420,6 @@ export const mockData = {
           "icon": "https://qqe2.com/img/logo.png"
         },
         {
-          "id": "site-1755074690874",
-          "name": "ATK鼠标驱动",
-          "url": "https://hub.atk.pro",
-          "description": "",
-          "icon": "https://cdn.atk.pro/hub-v3/production/3.1.11/icons/icon.ico"
-        },
-        {
-          "id": "site-1755074690874",
-          "name": "迈从键盘驱动",
-          "url": "https://www.mchose.com.cn/#/connectDevice",
-          "description": "",
-          "icon": "https://www.mchose.com.cn/mchose.ico"
-        },
-        {
           "id": "site-1755076763363",
           "name": "检表模板",
           "url": "https://jbyymb.pages.dev/",
@@ -460,13 +446,6 @@ export const mockData = {
           "url": "https://haowallpaper.com/",
           "description": "",
           "icon": "https://haowallpaper.com/favicon.ico"
-        },
-        {
-          "id": "site-1773311659475",
-          "name": "迈从Hub",
-          "url": "https://www.mchose.com.cn/#/connectDevice",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=www.mchose.com.cn&sz=128"
         }
       ]
     },
