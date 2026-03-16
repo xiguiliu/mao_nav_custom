@@ -47,6 +47,20 @@ export const mockData = {
           "url": "https://panhub.shenzjd.com/",
           "description": "",
           "icon": "https://panhub.shenzjd.com/favicon.ico"
+        },
+        {
+          "id": "site-1773641103623",
+          "name": "日历",
+          "url": "https://wannianrili.bmcx.com/",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=wannianrili.bmcx.com&sz=128"
+        },
+        {
+          "id": "site-1773641199242",
+          "name": "天气预报",
+          "url": "https://weathernew.pae.baidu.com/weathernew/pc?query=%E5%B1%B1%E4%B8%9C%E6%B5%8E%E5%8D%97%E5%A4%A9%E6%B0%94&srcid=4982&forecast=long_day_forecast",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=weathernew.pae.baidu.com&sz=128"
         }
       ]
     },
