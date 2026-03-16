@@ -445,7 +445,7 @@ export const mockData = {
           "name": "4K高清壁纸",
           "url": "https://haowallpaper.com/",
           "description": "",
-          "icon": "https://haowallpaper.com/favicon.ico"
+          "icon": "https://www.google.com/s2/favicons?domain=haowallpaper.com&sz=128"
         },
         {
           "id": "site-1773460094642",
@@ -600,7 +600,5 @@ export const mockData = {
       ]
     }
   ],
-  "title": "迷妹导航",
-  "_fileSha": "a62958c54e5223d0c782b8014b023886174fbc93",
-  "search": "baidu"
+  "title": "迷妹导航"
 }
