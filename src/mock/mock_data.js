@@ -158,9 +158,9 @@ export const mockData = {
         {
           "id": "site-1755074314942",
           "name": "Ant Design Vue",
-          "url": "https://www.antdv.com/components/overview",
+          "url": "https://3x.antdv.com/components/overview-cn",
           "description": "",
-          "icon": "https://www.antdv.com/favicon.ico"
+          "icon": "https://www.google.com/s2/favicons?domain=3x.antdv.com&sz=128"
         },
         {
           "id": "site-1763976829442",
@@ -614,7 +614,5 @@ export const mockData = {
       ]
     }
   ],
-  "title": "迷妹导航",
-  "_fileSha": "d5bb1697e6d7b374b80c4087337344b9d849e2c9",
-  "search": "baidu"
+  "title": "迷妹导航"
 }
