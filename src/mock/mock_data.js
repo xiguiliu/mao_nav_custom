@@ -462,13 +462,6 @@ export const mockData = {
           "icon": "https://www.google.com/s2/favicons?domain=haowallpaper.com&sz=128"
         },
         {
-          "id": "site-1773460094642",
-          "name": "迈从 HUB",
-          "url": "https://www.mchose.com.cn/#/home",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=www.mchose.com.cn&sz=128"
-        },
-        {
           "id": "site-1773460111877",
           "name": "ATK HUB",
           "url": "https://hub.atk.pro/",
