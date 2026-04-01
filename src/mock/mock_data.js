@@ -253,6 +253,20 @@ export const mockData = {
           "url": "https://sign.qaq.al",
           "description": "",
           "icon": "https://www.google.com/s2/favicons?domain=sign.qaq.al&sz=128"
+        },
+        {
+          "id": "site-1775024728653",
+          "name": "冰code",
+          "url": "https://ice.v.ua/dashboard",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=ice.v.ua&sz=128"
+        },
+        {
+          "id": "site-1775024749090",
+          "name": "Acmio",
+          "url": "https://ai.acmi.run",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=ai.acmi.run&sz=128"
         }
       ]
     },
