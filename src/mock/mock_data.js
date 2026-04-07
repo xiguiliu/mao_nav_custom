@@ -267,6 +267,20 @@ export const mockData = {
           "url": "https://ai.acmi.run",
           "description": "",
           "icon": "https://www.google.com/s2/favicons?domain=ai.acmi.run&sz=128"
+        },
+        {
+          "id": "site-1775532569556",
+          "name": "部署sub2api",
+          "url": "https://blog.kejilion.pro/sub2api-openclaw-unified-api/",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=blog.kejilion.pro&sz=128"
+        },
+        {
+          "id": "site-1775532591676",
+          "name": "部署CLIProxyAPI",
+          "url": "https://blog.kejilion.pro/openclaw-cliproxyapi/",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=blog.kejilion.pro&sz=128"
         }
       ]
     },
