@@ -239,48 +239,6 @@ export const mockData = {
           "url": "https://www.doubao.com/chat/",
           "description": "",
           "icon": "https://gimg3.baidu.com/topone/src=https%3A%2F%2Fbkimg.cdn.bcebos.com%2Fsmart%2F7dd98d1001e93901213f5b9bfbb543e736d12f2e3846-bkimg-process%2Cv_1%2Crw_1%2Crh_1%2Cmaxl_800%2Cpad_1%3Fx-bce-process%3Dimage%2Fresize%2Cm_pad%2Cw_348%2Ch_348%2Ccolor_ffffff&refer=http%3A%2F%2Fwww.baidu.com&app=2011&size=f200,200&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1755190800&t=2acdc8d7cd0b6f5647fde227b1d591ea"
-        },
-        {
-          "id": "site-1774248103663",
-          "name": "公益站",
-          "url": "https://ai.qaq.al",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=ai.qaq.al&sz=128"
-        },
-        {
-          "id": "site-1774248139138",
-          "name": "签到站",
-          "url": "https://sign.qaq.al",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=sign.qaq.al&sz=128"
-        },
-        {
-          "id": "site-1775024728653",
-          "name": "冰code",
-          "url": "https://ice.v.ua/dashboard",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=ice.v.ua&sz=128"
-        },
-        {
-          "id": "site-1775024749090",
-          "name": "Acmio",
-          "url": "https://ai.acmi.run",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=ai.acmi.run&sz=128"
-        },
-        {
-          "id": "site-1775532569556",
-          "name": "部署sub2api",
-          "url": "https://blog.kejilion.pro/sub2api-openclaw-unified-api/",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=blog.kejilion.pro&sz=128"
-        },
-        {
-          "id": "site-1775532591676",
-          "name": "部署CLIProxyAPI",
-          "url": "https://blog.kejilion.pro/openclaw-cliproxyapi/",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=blog.kejilion.pro&sz=128"
         }
       ]
     },
