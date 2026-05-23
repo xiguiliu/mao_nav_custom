@@ -467,6 +467,13 @@ export const mockData = {
           "url": "https://hub.atk.pro/",
           "description": "",
           "icon": "https://www.google.com/s2/favicons?domain=hub.atk.pro&sz=128"
+        },
+        {
+          "id": "site-1779502200759",
+          "name": "鼠标测试",
+          "url": "https://www.mousetester.cn/",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=www.mousetester.cn&sz=128"
         }
       ]
     },
@@ -607,7 +614,5 @@ export const mockData = {
       ]
     }
   ],
-  "title": "猫猫导航",
-  "_fileSha": "d57b5379250c4121685a73232cf6fb620bbd5c34",
-  "search": "baidu"
+  "title": "猫猫导航"
 }
