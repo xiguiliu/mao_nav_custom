@@ -503,6 +503,20 @@ export const mockData = {
           "url": "https://xn--9kqz23b19z.com",
           "description": "",
           "icon": "https://xn--9kqz23b19z.com/images/logo.png"
+        },
+        {
+          "id": "site-1780132512523",
+          "name": "纯净代理",
+          "url": "https://cliproxy.com/sign-in/",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=cliproxy.com&sz=128"
+        },
+        {
+          "id": "site-1780132568369",
+          "name": "邮箱接码平台",
+          "url": "https://mails.luckyous.com/user/login",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=mails.luckyous.com&sz=128"
         }
       ]
     },
