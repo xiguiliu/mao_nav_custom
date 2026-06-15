@@ -47,20 +47,6 @@ export const mockData = {
           "url": "https://panhub.shenzjd.com/",
           "description": "",
           "icon": "https://panhub.shenzjd.com/favicon.ico"
-        },
-        {
-          "id": "site-1773641103623",
-          "name": "日历",
-          "url": "https://wannianrili.bmcx.com/",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=wannianrili.bmcx.com&sz=128"
-        },
-        {
-          "id": "site-1773641199242",
-          "name": "天气预报",
-          "url": "https://weathernew.pae.baidu.com/weathernew/pc?query=%E5%B1%B1%E4%B8%9C%E6%B5%8E%E5%8D%97%E5%A4%A9%E6%B0%94&srcid=4982&forecast=long_day_forecast",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=weathernew.pae.baidu.com&sz=128"
         }
       ]
     },
@@ -542,34 +528,6 @@ export const mockData = {
           "icon": "/sitelogo/www.youtube.com.ico"
         },
         {
-          "id": "site-1755075380914",
-          "name": "VIP视频解析",
-          "url": "https://www.pppabc.com/vip/",
-          "description": "",
-          "icon": "https://gimg3.baidu.com/topone/src=https%3A%2F%2Fbkimg.cdn.bcebos.com%2Fsmart%2F91ef76c6a7efce1b9d162a80320be4deb48f8c54cf7c-bkimg-process%2Cv_1%2Crw_1%2Crh_1%2Cmaxl_800%2Cpad_1%3Fx-bce-process%3Dimage%2Fresize%2Cm_pad%2Cw_348%2Ch_348%2Ccolor_ffffff&refer=http%3A%2F%2Fwww.baidu.com&app=2011&size=w931&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1755190800&t=84b5ffebfeb15277fcaeb49ed2bfcca4"
-        },
-        {
-          "id": "site-1755075547869",
-          "name": "皮皮鲨",
-          "url": "https://www.pipisha.cc/",
-          "description": "",
-          "icon": "https://img0.baidu.com/it/u=2273726676,1009029310&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"
-        },
-        {
-          "id": "site-1755075619275",
-          "name": "LibreTV",
-          "url": "https://libretv-51m.pages.dev/",
-          "description": "",
-          "icon": "https://raw.githubusercontent.com/LibreSpark/LibreTV/main/image/logo.png"
-        },
-        {
-          "id": "site-1763542289868",
-          "name": "达达趣",
-          "url": "https://www.dadaqu.cc/",
-          "description": "",
-          "icon": "https://www.dadaqu.cc/mxtheme/images/logo_black.png"
-        },
-        {
           "id": "hj001",
           "name": "HJ",
           "url": "https://qeokqey.com/",
@@ -600,7 +558,5 @@ export const mockData = {
       ]
     }
   ],
-  "title": "猫猫导航",
-  "_fileSha": "45475717108339f80bad5d86969bb27a56006ab0",
-  "search": "google"
+  "title": "猫猫导航"
 }
