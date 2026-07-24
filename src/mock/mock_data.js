@@ -554,11 +554,16 @@ export const mockData = {
           "url": "https://zh.stripchat.com/",
           "description": "",
           "icon": "https://assets.chapturist.com/assets/icons/mstile-70x70.png?v=9670c787"
+        },
+        {
+          "id": "site-1784861785514",
+          "name": "社区",
+          "url": "https://haijiao.com",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=haijiao.com&sz=128"
         }
       ]
     }
   ],
-  "title": "猫猫导航",
-  "_fileSha": "6f26b2a005ed466889bee146ba2c3f2c49ec7d63",
-  "search": "google"
+  "title": "猫猫导航"
 }
