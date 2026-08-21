@@ -232,6 +232,20 @@ export const mockData = {
           "url": "https://siliconflow.cn/",
           "description": "",
           "icon": "https://www.google.com/s2/favicons?domain=siliconflow.cn&sz=128"
+        },
+        {
+          "id": "site-1787292979904",
+          "name": "黑与白公益站",
+          "url": "https://ai.hybgzs.com/",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=ai.hybgzs.com&sz=128"
+        },
+        {
+          "id": "site-1787293000950",
+          "name": "黑与白福利站",
+          "url": "https://cdk.hybgzs.com/dashboard",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=cdk.hybgzs.com&sz=128"
         }
       ]
     },
