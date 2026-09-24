@@ -535,13 +535,6 @@ export const mockData = {
       "order": 10,
       "sites": [
         {
-          "id": "youtube",
-          "name": "YouTube",
-          "url": "https://www.youtube.com",
-          "description": "视频分享平台",
-          "icon": "/sitelogo/www.youtube.com.ico"
-        },
-        {
           "id": "hj001",
           "name": "HJ",
           "url": "https://qeokqey.com/",
@@ -550,14 +543,14 @@ export const mockData = {
         },
         {
           "id": "site-911",
-          "name": "911爆料网",
+          "name": "911",
           "url": "https://bl07.co/",
           "description": "",
           "icon": "https://911bl.com/favicon.ico"
         },
         {
           "id": "site-51",
-          "name": "51爆料网",
+          "name": "51新闻",
           "url": "https://www.51baoliao01.com/",
           "description": "",
           "icon": "https://www.51baoliao01.com/usr/themes/Mirages/images/logo.jpeg"
@@ -589,6 +582,20 @@ export const mockData = {
           "url": "https://tangxinvlog.pro/",
           "description": "",
           "icon": "https://www.google.com/s2/favicons?domain=tangxinvlog.pro&sz=128"
+        },
+        {
+          "id": "site-1790232599008",
+          "name": "黄果",
+          "url": "https://huangguo2.com/",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=huangguo2.com&sz=128"
+        },
+        {
+          "id": "site-1790232615655",
+          "name": "女菩萨",
+          "url": "https://nv-pu-sa.pages.dev/",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=nv-pu-sa.pages.dev&sz=128"
         }
       ]
     }
