@@ -206,13 +206,6 @@ export const mockData = {
           "icon": "/sitelogo/claude.ai.ico"
         },
         {
-          "id": "cursor",
-          "name": "Cursor",
-          "url": "https://cursor.sh",
-          "description": "AI代码编辑器",
-          "icon": "/sitelogo/cursor.sh.ico"
-        },
-        {
           "id": "site-1755075776168",
           "name": "豆包",
           "url": "https://www.doubao.com/chat/",
@@ -232,13 +225,6 @@ export const mockData = {
           "url": "https://platform.deepseek.com",
           "description": "",
           "icon": "https://www.google.com/s2/favicons?domain=platform.deepseek.com&sz=128"
-        },
-        {
-          "id": "site-1780725419651",
-          "name": "硅基流动",
-          "url": "https://siliconflow.cn/",
-          "description": "",
-          "icon": "https://www.google.com/s2/favicons?domain=siliconflow.cn&sz=128"
         },
         {
           "id": "site-1787292979904",
@@ -349,13 +335,6 @@ export const mockData = {
           "icon": "/sitelogo/www.52pojie.cn.ico"
         },
         {
-          "id": "stackoverflow",
-          "name": "Stack Overflow",
-          "url": "https://stackoverflow.com",
-          "description": "程序员问答社区",
-          "icon": "/sitelogo/stackoverflow.com.ico"
-        },
-        {
           "id": "site-1755074981053",
           "name": "CC宝盒",
           "url": "https://ccbaohe.com/",
@@ -392,11 +371,11 @@ export const mockData = {
           "icon": "/sitelogo/jsonformatter.org.ico"
         },
         {
-          "id": "regex101",
-          "name": "Regex101",
-          "url": "https://regex101.com",
-          "description": "正则表达式测试",
-          "icon": "/sitelogo/regex101.com.ico"
+          "id": "site-1752649007053",
+          "name": "BeJson",
+          "url": "https://www.bejson.com/",
+          "description": "工具大全",
+          "icon": "/sitelogo/www.bejson.com.ico"
         },
         {
           "id": "tinypng",
@@ -404,20 +383,6 @@ export const mockData = {
           "url": "https://tinypng.com",
           "description": "图片压缩工具",
           "icon": "/sitelogo/tinypng.com.ico"
-        },
-        {
-          "id": "curlconverter",
-          "name": "curl converter",
-          "url": "https://curlconverter.com/",
-          "description": "curl命令转换工具",
-          "icon": "/sitelogo/curlconverter.com.ico"
-        },
-        {
-          "id": "site-1752649007053",
-          "name": "BeJson",
-          "url": "https://www.bejson.com/",
-          "description": "工具大全",
-          "icon": "/sitelogo/www.bejson.com.ico"
         },
         {
           "id": "site-1755074654862",
