@@ -47,6 +47,13 @@ export const mockData = {
           "url": "https://panhub.shenzjd.com/",
           "description": "",
           "icon": "https://panhub.shenzjd.com/favicon.ico"
+        },
+        {
+          "id": "site-1790232715945",
+          "name": "订阅共享",
+          "url": "https://proxy.mcii.cc/",
+          "description": "",
+          "icon": "https://www.google.com/s2/favicons?domain=proxy.mcii.cc&sz=128"
         }
       ]
     },
